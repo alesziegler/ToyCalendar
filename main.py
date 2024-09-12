@@ -8,6 +8,10 @@ delta = end_date - start_date
 print(delta.days)
 print(type(delta))
 print(range(delta.days))
+print(type(range(delta.days)))
+
+for day in range(delta.days):
+    print(day,end=" ")
 """
   return [start_date + timedelta(days=i) for i in range(delta.days + 1)]
 

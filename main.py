@@ -5,13 +5,23 @@ from datetime import date, timedelta
 start_date = date(2024, 2, 15)
 end_date = date(2024, 3, 5)
 delta = end_date - start_date
+
+list_of_dates = []
+
+for i in range(delta.days):
+  print((start_date + timedelta(days=i)).strftime("%d %B"))
+
+
+print(list_of_dates)
+
 print(delta.days)
 print(type(delta))
 print(range(delta.days))
 print(type(range(delta.days)))
 
-for day in range(delta.days):
-    print(day,end=" ")
+
+
+
 """
   return [start_date + timedelta(days=i) for i in range(delta.days + 1)]
 

@@ -1,6 +1,13 @@
-from datetime import datetime
+from datetime import date, datetime
+from file_manipulation import FileManipulation
 
 print(datetime.now().date())
+
+start_date = date(2024, 1, 1)
+
+print(type(start_date))
+
+test_file_manip = FileManipulation("svatky.txt")
 
 """
 Ok, we need a method that copies file and deletes empty lines from it.

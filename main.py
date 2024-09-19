@@ -9,6 +9,8 @@ print(type(start_date))
 
 test_file_manip = FileManipulation("svatky.txt")
 
+test_file_manip.delete_empty_lines()
+
 """
 Ok, we need a method that copies file and deletes empty lines from it.
 Next, what?

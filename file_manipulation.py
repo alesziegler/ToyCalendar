@@ -5,10 +5,10 @@ class FileManipulation:
     self.__file = file
   
   def delete_empty_lines(self):
-    with open(self.__file, 'r') as input:
+    with open(self.__file, 'r',encoding = 'utf-8') as input:
       lines = input.readlines() #it works (type is list)
     print(type(lines))
-  """
+  
     non_empty_lines = []
 
     for line in lines:
@@ -16,7 +16,7 @@ class FileManipulation:
         non_empty_lines.append(line)
     print(non_empty_lines)
   
-  
+  """
   def remove_empty_lines(input_file, output_file):
     with open(input_file, 'r') as file:
         lines = file.readlines()

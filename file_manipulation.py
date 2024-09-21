@@ -5,7 +5,7 @@ class FileManipulation:
     self.__file = file
   
   def delete_empty_lines(self):
-    with open(self.__file, 'r') as input:
+    with open(self.__file, 'r', encoding = 'utf-8') as input:
       lines = input.readlines() #it works (type is list)
   
     print(type(lines))

@@ -1,8 +1,14 @@
+import sys
 from datetime import date, datetime, timedelta
 from file_manipulation import FileManipulation
 
 #print(datetime.now().date())
 
+print(sys.version)
+
+a = "hf"
+
+print("{a}")
 
 start_date = date(2024, 1, 1)
 end_date = date(2024, 12, 31)
@@ -36,7 +42,22 @@ current_name = names[matching_index+1]
 
 print(current_name)
 
-print("Dnes ma svatek:")
+x = "test"
+
+print("Dnes ma svatek {x}cccc")
+
+name = input("Zadejte sve jmeno: ")
+
+try:
+    matching_index = names.index(name.strip())
+except Exception as e:
+    print(e)
+
+my_date = calendar[matching_index + 1]
+
+print("Svatek mate {my_date}")
+
+
 
 """
 Ok, we need something like if datetime.now().date() converted to an appropriate format

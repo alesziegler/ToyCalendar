@@ -1,7 +1,7 @@
 from datetime import date, datetime, timedelta
 from file_manipulation import FileManipulation
 
-print(datetime.now().date())
+#print(datetime.now().date())
 
 
 start_date = date(2024, 1, 1)
@@ -10,17 +10,33 @@ delta = end_date - start_date
 
 calendar = [(start_date + timedelta(days=item+1)).strftime("%d %B") for item in range(delta.days)]
 
-print(calendar)
+#print(calendar)
 
 """
 for i in range(delta.days):
   # in function, this maybe needs a list comprehension?
   print( (start_date + timedelta(days=i+1)).strftime("%d %B") )
 """
-#test_file_manip = FileManipulation("svatky.txt")
+test_file_manip = FileManipulation("svatky.txt")
 
-#test_file_manip.delete_empty_lines()
+names = test_file_manip.delete_empty_lines()
 
+
+#ok, lets do it differently - here we use matching indexes of our two lists
+
+current_day = datetime.now().date().strftime("%d %B")
+
+#print(current_day)
+
+matching_index = calendar.index(current_day)
+
+#print(matching_index)
+
+current_name = names[matching_index+1]
+
+print(current_name)
+
+print("Dnes ma svatek:")
 
 """
 Ok, we need something like if datetime.now().date() converted to an appropriate format

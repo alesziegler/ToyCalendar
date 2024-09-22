@@ -14,7 +14,8 @@ class FileManipulation:
     for line in lines:
       if line.strip() != "":
         non_empty_lines.append(line)
-    print(non_empty_lines)
+
+    return non_empty_lines
   
   """
   def remove_empty_lines(input_file, output_file):
@@ -33,4 +34,7 @@ class FileManipulation:
   """
   
   def combine_with_another_file_as_csv(self,another_file):
-    pass
+    list_of_names = self.delete_empty_lines()
+    """
+    Ok, maybe we should have a dictionary?
+    """

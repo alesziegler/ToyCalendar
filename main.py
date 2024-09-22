@@ -1,18 +1,31 @@
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from file_manipulation import FileManipulation
 
 print(datetime.now().date())
 
+
 start_date = date(2024, 1, 1)
+end_date = date(2024, 12, 31)
+delta = end_date - start_date
 
-print(type(start_date))
+calendar = [(start_date + timedelta(days=item+1)).strftime("%d %B") for item in range(delta.days)]
 
-test_file_manip = FileManipulation("svatky.txt")
+print(calendar)
 
-test_file_manip.delete_empty_lines()
+"""
+for i in range(delta.days):
+  # in function, this maybe needs a list comprehension?
+  print( (start_date + timedelta(days=i+1)).strftime("%d %B") )
+"""
+#test_file_manip = FileManipulation("svatky.txt")
+
+#test_file_manip.delete_empty_lines()
 
 
 """
+Ok, we need something like if datetime.now().date() converted to an appropriate format
+equals value in a dictionary, print keys?
+
 Ok, we need a method that copies file and deletes empty lines from it.
 Next, what?
 We need to combine result of that method applied to our file, with 

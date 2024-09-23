@@ -4,12 +4,6 @@ from file_manipulation import FileManipulation
 
 #print(datetime.now().date())
 
-print(sys.version)
-
-a = "hf"
-
-print("{a}")
-
 start_date = date(2024, 1, 1)
 end_date = date(2024, 12, 31)
 delta = end_date - start_date
@@ -28,6 +22,7 @@ test_file_manip = FileManipulation("svatky.txt")
 names = test_file_manip.delete_empty_lines()
 
 
+
 #ok, lets do it differently - here we use matching indexes of our two lists
 
 current_day = datetime.now().date().strftime("%d %B")
@@ -40,24 +35,27 @@ matching_index = calendar.index(current_day)
 
 current_name = names[matching_index+1]
 
-print(current_name)
+print(f"Dnes ma svatek: {current_name}")
 
-x = "test"
 
-print("Dnes ma svatek {x}cccc")
 
 name = input("Zadejte sve jmeno: ")
 
 try:
-    matching_index = names.index(name.strip())
+    print(name)
+    matching_index = names.index(name.strip() + "\n")
+    print("try")
 except Exception as e:
     print(e)
+    print("except")
 
-my_date = calendar[matching_index + 1]
+my_date = calendar[matching_index - 1]
 
-print("Svatek mate {my_date}")
+print(f"Svatek mate {my_date}")
 
+print(names[55])
 
+print(names.index("Liliana\n"))
 
 """
 Ok, we need something like if datetime.now().date() converted to an appropriate format

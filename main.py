@@ -43,12 +43,13 @@ print(f"Dnes ma svatek: {current_name}")
 name = input("Zadejte sve jmeno: ")
 
 try:
-    print(name)
+    #print(name)
+    # if 
     matching_index = names.index(name.strip() + "\n")
     print("try")
 except Exception as e:
     #print(e)
-    print("except")
+    print("Toto jméno není v kalendáři")
 
 my_date = calendar[matching_index - 1]
 

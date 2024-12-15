@@ -19,6 +19,7 @@ class FileManipulation:
   
   """
   def make_lower_level_list_if_item_contains_given_character
+  ok, problem is that this operation should follow deleting empty lines.
 
   """
   

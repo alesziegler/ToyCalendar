@@ -1,13 +1,14 @@
-#import sys
 from datetime import date, datetime, timedelta
 from file_manipulation import FileManipulation
-
-#print(datetime.now().date())
 
 start_date = date(2024, 1, 1)
 end_date = date(2024, 12, 31)
 delta = end_date - start_date
 
+# in this, list being comprehrended appears to be just list of numbers from 1 to 365 or 366.
+# Operation consists in setting default date to appear in a new list and then adding to it
+# number of days specified by an item in a list being comprehended.
+# No names thus appear in a new list:
 calendar = [(start_date + timedelta(days=item+1)).strftime("%d %B") for item in range(delta.days)]
 
 #print(calendar)
@@ -46,7 +47,7 @@ try:
     matching_index = names.index(name.strip() + "\n")
     print("try")
 except Exception as e:
-    print(e)
+    #print(e)
     print("except")
 
 my_date = calendar[matching_index - 1]

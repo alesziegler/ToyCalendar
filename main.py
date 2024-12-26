@@ -90,7 +90,7 @@ except Exception as e:
   then get its key and match it with calendar
   """
   for name in dict_with_special_days.keys():
-    if name == input_name.strip():
+    if name.strip() == input_name.strip():
        matching_index = dict_with_special_days.get(name)
        my_date = calendar[matching_index - 1]
        there_is_a_match = True

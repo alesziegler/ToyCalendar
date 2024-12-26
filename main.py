@@ -1,5 +1,6 @@
 from datetime import date, datetime, timedelta
 from file_manipulation import FileManipulation
+from list_manipulation import ListManipulation
 
 start_date = date(2024, 1, 1)
 end_date = date(2024, 12, 31)
@@ -17,12 +18,36 @@ calendar = [(start_date + timedelta(days=item+1)).strftime("%d %B") for item in 
 for i in range(delta.days):
   # in function, this maybe needs a list comprehension?
   print( (start_date + timedelta(days=i+1)).strftime("%d %B") )
+
 """
-test_file_manip = FileManipulation("svatky.txt")
+test_list = ["hdash","cjpsjc","jfdojd,sdsdds"]
 
-names = test_file_manip.delete_empty_lines()
+test_list_manip = ListManipulation(test_list)
+
+deepened_test_list = test_list_manip.split_item_if_it_contains_given_separator_into_lower_level_list(",")
+
+print(deepened_test_list)
 
 
+svatky_file_manip = FileManipulation("svatky.txt")
+
+names = svatky_file_manip.delete_empty_lines()
+
+list_manip = ListManipulation(names)
+
+more_names_in_one_day_handling = list_manip.split_item_if_it_contains_given_separator_into_lower_level_list(",")
+
+days_with_more_names = []
+names_ascribed_to_days_with_more_names = []
+
+for item in more_names_in_one_day_handling:
+  if type(item) is list:
+     #ad item index to days_with_more_names
+     days_with_more_names.append(more_names_in_one_day_handling.index(item))
+     for name in item:
+        names_ascribed_to_days_with_more_names.append(name)
+     
+    
 
 #ok, lets do it differently - here we use matching indexes of our two lists
 
@@ -46,9 +71,17 @@ try:
     #print(name)
     # if 
     matching_index = names.index(name.strip() + "\n")
+    #somewhere here should be a if type list, do operation on a list
+    #NO. Matching indexes for list-names should be stored in a special place somewhere
     print("try")
 except Exception as e:
+    # try finding it in a special place where list-names are,
     #print(e)
+    try:
+       for index in days_with_more_names:
+          pass
+    except:
+      pass
     print("Toto jméno není v kalendáři")
 
 my_date = calendar[matching_index - 1]

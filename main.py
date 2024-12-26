@@ -28,6 +28,14 @@ deepened_test_list = test_list_manip.split_item_if_it_contains_given_separator_i
 
 print(deepened_test_list)
 
+test_list_to_dictionary_manip = ListManipulation(deepened_test_list)
+
+test_dictionary_from_deepened_list = test_list_to_dictionary_manip.create_dictionary_of_lower_level_lists()
+
+print(test_dictionary_from_deepened_list)
+
+
+
 
 svatky_file_manip = FileManipulation("svatky.txt")
 

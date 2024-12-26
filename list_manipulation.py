@@ -25,4 +25,5 @@ class ListManipulation:
             if type(i) is list:
                 for i_lower in i:
                     output.update({i_lower: self.__list.index(i)})
+                    
         return output
